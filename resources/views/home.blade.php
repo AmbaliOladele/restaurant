@@ -266,15 +266,15 @@
 		<!-- ***** About Area Ends ***** -->
 
         <!-- ***** Food Area starts **** -->
-        @include('includes.food')
+        @include('food')
         <!-- ***** Food Area ends **** -->
 
 		<!-- ***** Chefs Area starts ***** -->
-        @include('includes.foodchef')
+        @include('foodchef')
 		<!-- ***** Chefs Area Ends ***** -->
 
         <!-- **** Reservation Area starts **** -->
-        @include('includes.reservation')
+        @include('reservation')
         <!-- **** Reservation Area ends **** -->
 
 		<!-- ***** Menu Area Starts ***** -->
