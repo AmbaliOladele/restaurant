@@ -76,8 +76,7 @@ class HomeController extends Controller
             $data2 = Cart::select('*')->where('user_id', '=', $id)->get();
 
             $data = Cart::where('user_id',$id)
-                ->join('food', 'carts.food_id', '=', 'food.id')
-                ->get();
+                ->join('food', 'carts.food_id', '=', 'food.id');
 
             return view('showCart', compact('count','data','data2'));
         } else {
