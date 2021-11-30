@@ -266,109 +266,11 @@
 		<!-- ***** About Area Ends ***** -->
 
         <!-- ***** Food Area starts **** -->
-
-<section class="section" id="menu">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-4">
-				<div class="section-heading">
-					<h6>Our Menu</h6>
-					<h2>Our selection of cakes with quality taste</h2>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="menu-item-carousel">
-		<div class="col-lg-12">
-			<div class="owl-menu-item owl-carousel">
-				@foreach ($data as $data)
-				<form action="{{ url('/addToCart',$data->id) }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-					<div class="item">
-						<div
-							style="background-image: url('/foodImage/{{ $data->image }}');"
-							class="card"
-						>
-							<div class="price"><h6>{{ $data->price }}$</h6></div>
-							<div class="info">
-								<h1 class="title">{{ $data->title }}</h1>
-								<p class="description">{{ $data->description }}</p>
-								<div class="main-text-button">
-									<div class="scroll-to-section">
-										<a href="#reservation"
-											>Make Reservation <i class="fa fa-angle-down"></i
-										></a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="cart-div">
-                            <input
-                                type="number"
-                                name="quantity"
-                                min="1"
-                                value="1"/>
-                            <input type="submit" value="Add to cart" />
-                        </div>
-					</div>
-				</form>
-				@endforeach
-			</div>
-		</div>
-	</div>
-</section>
-<!-- ***** Menu Area Ends ***** -->
-
+        @include('food')
         <!-- ***** Food Area ends **** -->
 
 		<!-- ***** Chefs Area starts ***** -->
-        <!-- ***** Chefs Area Starts ***** -->
-<section class="section" id="chefs">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 offset-lg-4 text-center">
-                <div class="section-heading">
-                    <h6>Our Chefs</h6>
-                    <h2>We offer the best ingredients for you</h2>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            @foreach ($dataChef as $dataChef)
-            <div class="col-lg-4">
-                <div class="chef-item">
-                    <div class="thumb">
-                        <div class="overlay"></div>
-                        <ul class="social-icons">
-                            <li>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </li>
-                        </ul>
-                        <img
-                            width="350"
-                            height="400"
-                            src="chefimage/{{ $dataChef->image }}"
-                            alt="Chef #1" />
-                    </div>
-                    <div class="down-content">
-                        <h4>{{ $dataChef->name }}</h4>
-                        <span>{{ $dataChef->specialty }}</span>
-                    </div>
-                </div>
-            </div>
-            @endforeach
-        </div>
-
-    </div>
-</section>
-
+        @include('foodchef')
 		<!-- ***** Chefs Area Ends ***** -->
 
         <!-- **** Reservation Area starts **** -->

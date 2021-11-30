@@ -45,9 +45,7 @@ class HomeController extends Controller
     }
 
     public function addToCart(Request $request, $id) {
-        $addToCart = Auth::id();
-
-        if($addToCart) {
+        if(Auth::id()) {
 
             $user_id = Auth::id();
             $food_id = $id;
